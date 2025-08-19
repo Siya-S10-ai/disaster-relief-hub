@@ -8,23 +8,158 @@
 
     </head>
 <body>
-<>div id="app">
-    <h1>{{ message }}</h1>
-    <p>This is a simple Vue.js application.</p>
-    <iframe 
-        width="640px" 
-        height="480px" 
-        src="https://forms.office.com/Pages/ResponsePage.aspx?id=RI8M4Wn0j0S8DdeBKI_wG0DWWXvIKEJKq5Fs4YE0bg1UNzBNTjlEN1o4SUdBMkU0N1ZaNks3WFRGTC4u&embed=true" 
-        frameborder="0" 
-        marginwidth="0" 
-        marginheight="0" 
-        style="border: none; max-width:100%; max-height:100vh" 
-        allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> 
-    </iframe>
+
+<div id="app">
+    <header class="header">
+        <img class="logo" src="images/logo.jpg" alt="Logo">
+        <nav class="nav-links">
+            <a href="index.html">About</a>
+            <a href="donate.html">Donate</a>
+            <a href="volunteer.html">Volunteer</a>
+            <div class="auth-buttons">
+                <button class="auth-btn register-btn" @click="goTo('register.html')">Register</button>
+                <button class="auth-btn login-btn" @click="goTo('login.html')">Login</button>
+            </div>
+            <a class="profile-img-link" href="profile.html">
+                <img class="profile-img" :src="profileImg" alt="Profile" @click.prevent="updateProfileImg">
+            </a>
+        </nav>
+    </header>
+    <main class="main-content">
+        <h1>{{ message }}</h1>
+        <p>This is a simple Vue.js application.</p>
+        <iframe 
+            width="640px" 
+            height="480px" 
+            src="https://forms.office.com/r/Wun3hParEk?embed=true" 
+            frameborder="0" 
+            marginwidth="0" 
+            marginheight="0" 
+            style="border: none; max-width:100%; max-height:100vh" 
+            allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> 
+        </iframe>
+    </main>
 </div>
 
 
 
+
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.header {
+    display: flex;
+    align-items: center;
+    padding: 16px 32px;
+    background: url('images/floating-background.png') no-repeat center center;
+    background-size: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 24px;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.nav-links a {
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.2s;
+}
+.nav-links a:hover {
+    background: #f0f0f0;
+}
+.auth-buttons {
+    display: flex;
+    gap: 8px;
+    margin-left: 24px;
+}
+.auth-btn {
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.register-btn {
+    background: #e0e0e0;
+    color: #333;
+}
+.login-btn {
+    background: #0078d4;
+    color: #fff;
+}
+.profile-img-link {
+    margin-left: 24px;
+    display: flex;
+    align-items: center;
+}
+.profile-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0078d4;
+    cursor: pointer;
+}
+.main-content {
+    padding: 32px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 16px;
+    max-width: 800px;
+    margin: 40px auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+</style>
+
+<script>
+const { createApp } = Vue;
+createApp({
+    data() {
+        return {
+            message: 'Welcome to Disaster Relief Hub!',
+            profileImg: 'images/logo.jpg', // Default profile image
+        };
+    },
+    methods: {
+        goTo(url) {
+            window.location.href = url;
+        },
+        updateProfileImg() {
+            // Prompt user to select a new image
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = e => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = e => {
+                        this.profileImg = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            input.click();
+        }
+    }
+}).mount('#app');
+</script>
 
 </body>
 
