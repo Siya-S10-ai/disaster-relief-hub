@@ -20,25 +20,35 @@ Requirements:
 - .NET 8.0 SDK or later
 - Node.js & npm (for Tailwind CSS build process) - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Follow these steps:
+## 🛠️ Follow these steps:
 
+1. Step 1: Clone the repository using the project's Git URL.
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
 git clone <https://github.com/Siya-S10-ai/disaster-relief-hub.git>
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Step 2: Navigate to the project directory.
+```sh
+cd <"/giver-of-givers">
+```
 
-# Step 3: Install npm dependencies for Tailwind CSS.
+3. Step 3: Install npm dependencies for Tailwind CSS.
+```sh
 npm install
+```
 
-# Step 4: Build Tailwind CSS (in a separate terminal, keep running)
+4. Step 4: Build Tailwind CSS (in a separate terminal, keep running)
+```sh
 npm run build-css
+```
 
-# Step 5: Restore .NET dependencies.
+5. Step 5: Restore .NET dependencies.
+```sh
 dotnet restore
+```
 
-# Step 6: Start the development server.
+6. Step 6: Start the development server.
+```sh
 dotnet watch run
 ```
 
