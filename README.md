@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/f0defa45-23a3-43f7-97fe-288285f07152
+**URL**: (Not Yet Hosted)
 
 ## Overview
 
