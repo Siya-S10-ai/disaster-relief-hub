@@ -1,0 +1,10 @@
+@code {
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    
+    private Tabs? _tabs;
+
+    public void SetTabs(Tabs tabs)
+    {
+        _tabs = tabs;
+    }
+}
