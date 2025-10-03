@@ -1,29 +1,37 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">GiftOfGivers.Client</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+@* GiftOfGivers.Client/Shared/NavMenu.razor *@
+<div class="sidebar">
+    <div class="nav-header">
+        <h3>GiftOfGivers</h3>
+        <button class="menu-toggle" @onclick="ToggleNav">☰</button>
     </div>
-</div>
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
+    <nav class="@NavMenuCssClass">
+        <ul>
+            <li>
+                <NavLink href="/" Match="NavLinkMatch.All">🏠 Home</NavLink>
+            </li>
+            <li>
+                <NavLink href="/login">🔑 Login</NavLink>
+            </li>
+            <li>
+                <NavLink href="/register">📝 Register</NavLink>
+            </li>
+            <li>
+                <NavLink href="/donations">💰 Donations</NavLink>
+            </li>
+            <li>
+                <NavLink href="/profile">👤 Profile</NavLink>
+            </li>
+            <li>
+                <NavLink href="/reporter-dashboard">📊 Reporter Dashboard</NavLink>
+            </li>
+            <li>
+                <NavLink href="/submit-report">📰 Submit Report</NavLink>
+            </li>
+            <li>
+                <NavLink href="/volunteer-dashboard">🤝 Volunteer Dashboard</NavLink>
+            </li>
+        </ul>
     </nav>
 </div>
 
@@ -32,7 +40,7 @@
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
-    private void ToggleNavMenu()
+    private void ToggleNav()
     {
         collapseNavMenu = !collapseNavMenu;
     }
