@@ -10,8 +10,9 @@ namespace GiftOfGivers.Server.Data
             : base(options)
         { }
 
-        // Add additional DbSets later:
-        // public DbSet<IncidentReport> IncidentReports { get; set; }
-        // public DbSet<Donation> Donations { get; set; }
+        // Add additional DbSets:
+        public DbSet<Report> Reports { get; set; }
+        public DbSet<VolunteerTask> VolunteerTasks { get; set; }
     }
 }
+
