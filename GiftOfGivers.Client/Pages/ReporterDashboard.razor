@@ -1,0 +1,156 @@
+@page "/reporter-dashboard"
+@using BlazorApp.Services
+@inject IApiService ApiService
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Reporter Dashboard - GOG</PageTitle>
+
+<div class="min-h-screen bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+    <Navigation User="@user" OnLogout="@HandleLogout" />
+    
+    @if (user == null)
+    {
+        <div class="flex justify-center items-center h-64">
+            <p>Loading...</p>
+        </div>
+    }
+    else
+    {
+        <div class="container mx-auto px-4 py-8">
+            <!-- Welcome Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold gradient-text mb-4">
+                    Welcome back, @user.Name!
+                </h1>
+                <p class="text-muted-foreground text-lg mb-6">
+                    Ready to make a difference? Submit a new incident report or review your previous submissions.
+                </p>
+                <button class="btn btn-primary" @onclick="@(() => Navigation.NavigateTo("/submit-report"))">
+                    Submit New Report
+                </button>
+            </div>
+
+            <!-- Report Categories -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Quick Report Categories</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    @foreach (var category in reportCategories)
+                    {
+                        <div class="card hover:shadow-lg transition-shadow cursor-pointer"
+                             @onclick="@(() => Navigation.NavigateTo($"/submit-report?category={category.Id}"))">
+                            <div class="card-body">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <div class="p-2 rounded-lg @category.Color">
+                                        <i class="@category.Icon"></i>
+                                    </div>
+                                    <h3 class="text-lg font-semibold">@category.Title</h3>
+                                </div>
+                                <p class="text-muted-foreground">@category.Description</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Recent Reports -->
+            <div>
+                <h2 class="text-2xl font-semibold mb-6">Your Recent Reports</h2>
+                @if (recentReports.Any())
+                {
+                    <div class="grid gap-4">
+                        @foreach (var report in recentReports)
+                        {
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <h3 class="font-semibold mb-2">@report.Title</h3>
+                                            <p class="text-sm text-muted-foreground">@report.Date.ToString("MMM dd, yyyy")</p>
+                                        </div>
+                                        <span class="badge @GetStatusBadgeClass(report.Status)">
+                                            @report.Status
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="text-center py-12">
+                        <p class="text-muted-foreground mb-4">No reports submitted yet.</p>
+                        <button class="btn btn-primary" @onclick="@(() => Navigation.NavigateTo("/submit-report"))">
+                            Submit Your First Report
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private User? user;
+    
+    private List<ReportCategory> reportCategories = new()
+    {
+        new ReportCategory { Id = "natural-disaster", Title = "Natural Disaster", Icon = "fas fa-mountain", Description = "Earthquakes, floods, storms, wildfires", Color = "bg-red-100 text-red-600" },
+        new ReportCategory { Id = "medical-emergency", Title = "Medical Emergency", Icon = "fas fa-heartbeat", Description = "Health crises, medical supply shortages", Color = "bg-green-100 text-green-600" },
+        new ReportCategory { Id = "infrastructure", Title = "Infrastructure", Icon = "fas fa-tools", Description = "Road damage, power outages, water issues", Color = "bg-blue-100 text-blue-600" },
+        new ReportCategory { Id = "security", Title = "Security Incident", Icon = "fas fa-shield-alt", Description = "Safety concerns, security threats", Color = "bg-yellow-100 text-yellow-600" },
+        new ReportCategory { Id = "humanitarian", Title = "Humanitarian Crisis", Icon = "fas fa-hands-helping", Description = "Food shortage, displacement, poverty", Color = "bg-purple-100 text-purple-600" },
+        new ReportCategory { Id = "other", Title = "Other", Icon = "fas fa-ellipsis-h", Description = "Other incidents requiring attention", Color = "bg-gray-100 text-gray-600" }
+    };
+
+    private List<RecentReport> recentReports = new()
+    {
+        new RecentReport { Id = "1", Title = "Flood damage in local community", Status = "Under Review", Date = DateTime.Now.AddDays(-2) },
+        new RecentReport { Id = "2", Title = "Power outage affecting neighborhood", Status = "Resolved", Date = DateTime.Now.AddDays(-5) }
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        var userData = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "user");
+        if (!string.IsNullOrEmpty(userData))
+        {
+            user = System.Text.Json.JsonSerializer.Deserialize<User>(userData);
+        }
+        else
+        {
+            Navigation.NavigateTo("/login");
+        }
+    }
+
+    private async Task HandleLogout()
+    {
+        await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "user");
+        Navigation.NavigateTo("/");
+    }
+
+    private string GetStatusBadgeClass(string status) => status switch
+    {
+        "Under Review" => "bg-yellow-100 text-yellow-800",
+        "In Progress" => "bg-blue-100 text-blue-800",
+        "Resolved" => "bg-green-100 text-green-800",
+        _ => "bg-gray-100 text-gray-800"
+    };
+
+    public class ReportCategory
+    {
+        public string Id { get; set; } = "";
+        public string Title { get; set; } = "";
+        public string Icon { get; set; } = "";
+        public string Description { get; set; } = "";
+        public string Color { get; set; } = "";
+    }
+
+    public class RecentReport
+    {
+        public string Id { get; set; } = "";
+        public string Title { get; set; } = "";
+        public string Status { get; set; } = "";
+        public DateTime Date { get; set; }
+    }
+}

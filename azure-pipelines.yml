@@ -6,15 +6,22 @@
 trigger:
 - main
 
+jobs:
+- job: Run on Windows
+  pool:
+    vmImage: windows-latest
+
+steps:
+- script: dotnet test
+  displayName: Run unit tests
+
+- job: Run on Linux
 pool:
   vmImage: windows-latest
 
 steps:
-- task: UseDotNet@2
-  inputs:
-    packageType: sdk
-    version: '8.0.x'
-  displayName: 'Install .NET 8 SDK'
+- scripts: dotnet test
+  displayName: Run unit tests
 
 - script: dotnet restore
     echo Add other tasks to build, test, and deploy your project.

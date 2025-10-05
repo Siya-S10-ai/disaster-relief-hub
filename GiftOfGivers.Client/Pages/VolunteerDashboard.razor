@@ -1,0 +1,213 @@
+@page "/volunteer-dashboard"
+@using BlazorApp.Services
+@inject IApiService ApiService
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Volunteer Dashboard - GOG</PageTitle>
+
+<div class="min-h-screen bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+    <Navigation User="@user" OnLogout="@HandleLogout" />
+    
+    @if (user == null)
+    {
+        <div class="flex justify-center items-center h-64">
+            <p>Loading...</p>
+        </div>
+    }
+    else
+    {
+        <div class="container mx-auto px-4 py-8">
+            <!-- Welcome Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold gradient-text mb-4">
+                    Welcome, @user.Name!
+                </h1>
+                <p class="text-muted-foreground text-lg">
+                    Thank you for your dedication to helping others. Here's your impact dashboard.
+                </p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="text-3xl font-bold text-primary mb-2">@stats.TotalTasks</div>
+                        <p class="text-muted-foreground">Total Tasks</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="text-3xl font-bold text-green-600 mb-2">@stats.CompletedTasks</div>
+                        <p class="text-muted-foreground">Completed</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">@stats.HoursContributed</div>
+                        <p class="text-muted-foreground">Hours Contributed</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="text-3xl font-bold text-yellow-600 mb-2">@stats.ImpactRating</div>
+                        <p class="text-muted-foreground">Impact Rating</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Tasks -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Available Tasks</h2>
+                <div class="grid gap-6">
+                    @foreach (var task in availableTasks)
+                    {
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="text-lg font-semibold mb-2">@task.Name</h3>
+                                        <p class="text-muted-foreground mb-2">@task.Description</p>
+                                        <div class="flex space-x-2">
+                                            <span class="badge bg-blue-100 text-blue-800">@task.Category</span>
+                                            <span class="badge @GetUrgencyBadgeClass(task.Urgency)">@task.Urgency</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" disabled="@(task.Volunteers >= task.MaxVolunteers)">
+                                        @if (task.Volunteers >= task.MaxVolunteers)
+                                        {
+                                            <text>Full</text>
+                                        }
+                                        else
+                                        {
+                                            <text>Join Task</text>
+                                        }
+                                    </button>
+                                </div>
+                                <div class="flex justify-between items-center text-sm text-muted-foreground">
+                                    <span>@task.Volunteers/@task.MaxVolunteers volunteers</span>
+                                    <span>Status: @task.Status</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- My Contributions -->
+            <div>
+                <h2 class="text-2xl font-semibold mb-6">My Contributions</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr class="border-b">
+                                <th class="text-left p-4">Task</th>
+                                <th class="text-left p-4">Status</th>
+                                <th class="text-left p-4">Owner</th>
+                                <th class="text-left p-4">Hours</th>
+                                <th class="text-left p-4">Completed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var contribution in myContributions)
+                            {
+                                <tr class="border-b hover:bg-muted/50">
+                                    <td class="p-4">@contribution.TaskName</td>
+                                    <td class="p-4">
+                                        <span class="badge @GetStatusBadgeClass(contribution.Status)">
+                                            @contribution.Status
+                                        </span>
+                                    </td>
+                                    <td class="p-4">@contribution.Owner</td>
+                                    <td class="p-4">@contribution.HoursContributed</td>
+                                    <td class="p-4">@(contribution.CompletedDate?.ToString("MMM dd, yyyy") ?? "In Progress")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private User? user;
+    
+    private List<VolunteerTask> availableTasks = new()
+    {
+        new VolunteerTask { Name = "Emergency Food Distribution", Category = "Humanitarian", Status = "Active", Urgency = "High", Volunteers = 8, MaxVolunteers = 10, Description = "Help distribute emergency food supplies to families affected by recent flooding." },
+        new VolunteerTask { Name = "Medical Supply Coordination", Category = "Healthcare", Status = "Active", Urgency = "Medium", Volunteers = 5, MaxVolunteers = 8, Description = "Assist in coordinating and distributing medical supplies to local clinics." }
+    };
+
+    private List<Contribution> myContributions = new()
+    {
+        new Contribution { TaskName = "Community Cleanup Drive", Status = "Completed", Owner = "Sarah Johnson", CompletedDate = DateTime.Now.AddDays(-10), HoursContributed = 8 },
+        new Contribution { TaskName = "Disaster Relief Coordination", Status = "In Progress", Owner = "Mike Davis", HoursContributed = 12 }
+    };
+
+    private VolunteerStats stats = new() { TotalTasks = 15, CompletedTasks = 12, HoursContributed = 96, ImpactRating = 4.8 };
+
+    protected override async Task OnInitializedAsync()
+    {
+        var userData = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "user");
+        if (!string.IsNullOrEmpty(userData))
+        {
+            user = System.Text.Json.JsonSerializer.Deserialize<User>(userData);
+        }
+        else
+        {
+            Navigation.NavigateTo("/login");
+        }
+    }
+
+    private async Task HandleLogout()
+    {
+        await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "user");
+        Navigation.NavigateTo("/");
+    }
+
+    private string GetUrgencyBadgeClass(string urgency) => urgency switch
+    {
+        "High" => "bg-red-100 text-red-800",
+        "Medium" => "bg-yellow-100 text-yellow-800",
+        "Low" => "bg-green-100 text-green-800",
+        _ => "bg-gray-100 text-gray-800"
+    };
+
+    private string GetStatusBadgeClass(string status) => status switch
+    {
+        "Completed" => "bg-green-100 text-green-800",
+        "In Progress" => "bg-blue-100 text-blue-800",
+        "Active" => "bg-yellow-100 text-yellow-800",
+        _ => "bg-gray-100 text-gray-800"
+    };
+
+    public class VolunteerTask
+    {
+        public string Name { get; set; } = "";
+        public string Category { get; set; } = "";
+        public string Status { get; set; } = "";
+        public string Urgency { get; set; } = "";
+        public int Volunteers { get; set; }
+        public int MaxVolunteers { get; set; }
+        public string Description { get; set; } = "";
+    }
+
+    public class Contribution
+    {
+        public string TaskName { get; set; } = "";
+        public string Status { get; set; } = "";
+        public string Owner { get; set; } = "";
+        public DateTime? CompletedDate { get; set; }
+        public int HoursContributed { get; set; }
+    }
+
+    public class VolunteerStats
+    {
+        public int TotalTasks { get; set; }
+        public int CompletedTasks { get; set; }
+        public int HoursContributed { get; set; }
+        public double ImpactRating { get; set; }
+    }
+}

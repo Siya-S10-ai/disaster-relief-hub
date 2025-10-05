@@ -1,0 +1,190 @@
+@page "/submit-report"
+@using BlazorApp.Services
+@inject IApiService ApiService
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Submit Report - GOG</PageTitle>
+
+<div class="min-h-screen bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+    <Navigation User="@user" OnLogout="@HandleLogout" />
+    
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-2xl font-bold">Submit Incident Report</h1>
+                    <p class="text-muted-foreground">Help us respond quickly by providing detailed information about the incident.</p>
+                </div>
+                
+                <div class="card-body">
+                    <EditForm Model="@reportData" OnValidSubmit="@HandleSubmit">
+                        <DataAnnotationsValidator />
+                        
+                        <!-- Reporter Information -->
+                        <div class="space-y-4 mb-6">
+                            <h3 class="text-lg font-semibold">Reporter Information</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Name</label>
+                                    <InputText @bind-Value="reportData.ReporterName" class="form-input" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Email</label>
+                                    <InputText @bind-Value="reportData.ReporterEmail" class="form-input" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Phone</label>
+                                    <InputText @bind-Value="reportData.ReporterPhone" class="form-input" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Incident Details -->
+                        <div class="space-y-4 mb-6">
+                            <h3 class="text-lg font-semibold">Incident Details</h3>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Report Type</label>
+                                <InputSelect @bind-Value="reportData.ReportType" class="form-select">
+                                    <option value="">Select type...</option>
+                                    <option value="natural-disaster">Natural Disaster</option>
+                                    <option value="medical-emergency">Medical Emergency</option>
+                                    <option value="infrastructure">Infrastructure</option>
+                                    <option value="security">Security Incident</option>
+                                    <option value="humanitarian">Humanitarian Crisis</option>
+                                    <option value="other">Other</option>
+                                </InputSelect>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Location</label>
+                                <InputText @bind-Value="reportData.Location" class="form-input" placeholder="Street address, city, province" />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Description</label>
+                                <InputTextArea @bind-Value="reportData.Description" class="form-textarea" rows="4" placeholder="Describe the incident, including severity, affected areas, and immediate needs..." />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Urgency Level</label>
+                                <InputSelect @bind-Value="reportData.Urgency" class="form-select">
+                                    <option value="">Select urgency...</option>
+                                    <option value="low">Low - Non-urgent, can wait</option>
+                                    <option value="medium">Medium - Important, needs attention</option>
+                                    <option value="high">High - Urgent, immediate response needed</option>
+                                    <option value="critical">Critical - Life-threatening emergency</option>
+                                </InputSelect>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Supporting Image (Optional)</label>
+                                <InputFile OnChange="@HandleFileChange" class="form-input" accept="image/*" />
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-4">
+                            <button type="submit" class="btn btn-primary" disabled="@isLoading">
+                                @if (isLoading)
+                                {
+                                    <span>Submitting...</span>
+                                }
+                                else
+                                {
+                                    <span>Submit Report</span>
+                                }
+                            </button>
+                            <button type="button" class="btn btn-secondary" @onclick="@(() => Navigation.NavigateTo(-1))">
+                                Cancel
+                            </button>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private User? user;
+    private ReportData reportData = new();
+    private bool isLoading = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var userData = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "user");
+        if (!string.IsNullOrEmpty(userData))
+        {
+            user = System.Text.Json.JsonSerializer.Deserialize<User>(userData);
+            reportData.ReporterName = user.Name + " " + user.Surname;
+            reportData.ReporterEmail = user.Email;
+            reportData.ReporterPhone = user.Phone;
+        }
+        else
+        {
+            Navigation.NavigateTo("/login");
+        }
+
+        // Check for category parameter
+        var uri = new Uri(Navigation.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+        if (!string.IsNullOrEmpty(query["category"]))
+        {
+            reportData.ReportType = query["category"];
+        }
+    }
+
+    private async Task HandleSubmit()
+    {
+        isLoading = true;
+        try
+        {
+            // Simulate API call
+            await Task.Delay(2000);
+            
+            // In real implementation, call API service
+            // await ApiService.SubmitReportAsync(reportData);
+            
+            await JSRuntime.InvokeVoidAsync("alert", "Report submitted successfully!");
+            Navigation.NavigateTo("/reporter-dashboard");
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", $"Error submitting report: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private async Task HandleFileChange(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file != null)
+        {
+            // Handle file upload logic
+            reportData.ImageFile = file;
+        }
+    }
+
+    private async Task HandleLogout()
+    {
+        await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "user");
+        Navigation.NavigateTo("/");
+    }
+
+    public class ReportData
+    {
+        public string ReporterName { get; set; } = "";
+        public string ReporterEmail { get; set; } = "";
+        public string ReporterPhone { get; set; } = "";
+        public string ReportType { get; set; } = "";
+        public string Location { get; set; } = "";
+        public string Description { get; set; } = "";
+        public string Urgency { get; set; } = "";
+        public IBrowserFile? ImageFile { get; set; }
+    }
+}
