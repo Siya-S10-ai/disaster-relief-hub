@@ -17,13 +17,16 @@ steps:
 
 - job: Run on Linux
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 steps:
 - scripts: dotnet test
   displayName: Run unit tests
 
-- script: |
+- script: dotnet restore
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  displayName: 'Restore dependencies'
+
+- script: dotnet build --configuration Release --no-restore
+  displayName: 'Build Blazor project'

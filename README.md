@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: (Not yet hosted)
+**URL**: (Not Yet Hosted)
 
 ## Overview
 
