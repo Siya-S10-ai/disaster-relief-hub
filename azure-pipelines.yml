@@ -11,21 +11,21 @@ jobs:
   pool:
     vmImage: 'windows-latest'
   steps:
-  - script: dotnet restore
+  - script: dotnet restore GiftOfGivers.Client/GiftOfGivers.Client.csproj
     displayName: 'Restore dependencies'
 
-  - script: dotnet build --configuration Release --no-restore
+  - script: dotnet build GiftOfGivers.Client/GiftOfGivers.Client.csproj --configuration Release --no-restore
     displayName: 'Build Blazor project'
 
-  - script: dotnet test
+  - script: dotnet test GiftOfGivers.Client/GiftOfGivers.Client.csproj
     displayName: 'Run unit tests'
 
 - job: Run_on_Linux
   pool:
     vmImage: 'ubuntu-latest'
   steps:
-  - script: dotnet restore
+  - script: dotnet restore GiftOfGivers.Client/GiftOfGivers.Client.csproj
     displayName: 'Restore dependencies'
 
-  - script: dotnet build --configuration Release --no-restore
+  - script: dotnet build GiftOfGivers.Client/GiftOfGivers.Client.csproj --configuration Release --no-restore
     displayName: 'Build project on Linux'
