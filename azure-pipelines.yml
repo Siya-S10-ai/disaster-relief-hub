@@ -7,26 +7,25 @@ trigger:
 - main
 
 jobs:
-- job: Run on Windows
+- job: Run_on_Windows
   pool:
-    vmImage: windows-latest
+    vmImage: 'windows-latest'
+  steps:
+  - script: dotnet restore
+    displayName: 'Restore dependencies'
 
-steps:
-- script: dotnet test
-  displayName: Run unit tests
+  - script: dotnet build --configuration Release --no-restore
+    displayName: 'Build Blazor project'
 
-- job: Run on Linux
-pool:
-  vmImage: windows-latest
+  - script: dotnet test
+    displayName: 'Run unit tests'
 
-steps:
-- scripts: dotnet test
-  displayName: Run unit tests
+- job: Run_on_Linux
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - script: dotnet restore
+    displayName: 'Restore dependencies'
 
-- script: dotnet restore
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Restore dependencies'
-
-- script: dotnet build --configuration Release --no-restore
-  displayName: 'Build Blazor project'
+  - script: dotnet build --configuration Release --no-restore
+    displayName: 'Build project on Linux'
