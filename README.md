@@ -6,7 +6,7 @@
 
 ## Overview
 
-This is a Blazor WebAssembly application with Tailwind CSS styling and Azure SQL database integration. The project has been converted from React to use Blazor's component-based architecture while maintaining the same design system and UI components.
+This is a Blazor WebAssembly application with Tailwind CSS styling and Azure SQL database integration. 
 
 ## How can I edit this code?
 
