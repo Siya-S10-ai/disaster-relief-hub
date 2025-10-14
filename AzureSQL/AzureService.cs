@@ -8,6 +8,7 @@ namespace GiftOfGivers.Client.AzureSQL
     {
         public AzureDbContext(DbContextOptions<AzureDbContext> options) : base(options)
         {
+            
         }
 
         // Add your DbSets here as you define your entities

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thandiwe\\Desktop\\Software Development 2025\\Applied Programming\\giver-of-givers\\GiftOfGivers.Client.csproj": {}
+    "C:\\Users\\Thandiwe\\Documents\\GitHub\\disaster-relief-hub\\GiftOfGivers.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thandiwe\\Desktop\\Software Development 2025\\Applied Programming\\giver-of-givers\\GiftOfGivers.Client.csproj": {
+    "C:\\Users\\Thandiwe\\Documents\\GitHub\\disaster-relief-hub\\GiftOfGivers.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thandiwe\\Desktop\\Software Development 2025\\Applied Programming\\giver-of-givers\\GiftOfGivers.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Thandiwe\\Documents\\GitHub\\disaster-relief-hub\\GiftOfGivers.Client.csproj",
         "projectName": "GiftOfGivers.Client",
-        "projectPath": "C:\\Users\\Thandiwe\\Desktop\\Software Development 2025\\Applied Programming\\giver-of-givers\\GiftOfGivers.Client.csproj",
+        "projectPath": "C:\\Users\\Thandiwe\\Documents\\GitHub\\disaster-relief-hub\\GiftOfGivers.Client.csproj",
         "packagesPath": "C:\\Users\\Thandiwe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thandiwe\\Desktop\\Software Development 2025\\Applied Programming\\giver-of-givers\\obj\\",
+        "outputPath": "C:\\Users\\Thandiwe\\Documents\\GitHub\\disaster-relief-hub\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -60,9 +60,13 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.9, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",

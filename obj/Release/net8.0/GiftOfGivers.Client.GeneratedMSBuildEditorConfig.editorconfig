@@ -1,0 +1,217 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = GiftOfGivers.Client
+build_property.RootNamespace = GiftOfGivers.Client
+build_property.ProjectDir = C:\Users\Thandiwe\Documents\GitHub\disaster-relief-hub\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Thandiwe\Documents\GitHub\disaster-relief-hub
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/Navigation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xOYXZpZ2F0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/Providers/TabsProvider.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm92aWRlcnNcVGFic1Byb3ZpZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Alert.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxBbGVydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Avatar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxBdmF0YXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/AvatarFallback.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxBdmF0YXJGYWxsYmFjay5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/AvatarImage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxBdmF0YXJJbWFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Badge.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxCYWRnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Button.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxCdXR0b24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Card.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxDYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/CardContent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxDYXJkQ29udGVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/CardHeader.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxDYXJkSGVhZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/CardTitle.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxDYXJkVGl0bGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Checkbox.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxDaGVja2JveC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Input.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxJbnB1dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Label.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxMYWJlbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Progress.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxQcm9ncmVzcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/ScrollArea.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxTY3JvbGxBcmVhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Select.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxTZWxlY3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Separator.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxTZXBhcmF0b3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Skeleton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxTa2VsZXRvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Switch.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxTd2l0Y2gucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Table.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUYWJsZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/TableBody.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUYWJsZUJvZHkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/TableCell.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUYWJsZUNlbGwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/TableHead.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUYWJsZUhlYWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/TableHeader.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUYWJsZUhlYWRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/TableRow.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUYWJsZVJvdy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Tabs.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUYWJzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/TabsList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUYWJzTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/TabsTrigger.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUYWJzVHJpZ2dlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Textarea.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUZXh0YXJlYS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/Components/UI/Toast.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUb2FzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/Pages/Donations.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxQYWdlc1xEb25hdGlvbnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxQYWdlc1xMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/Pages/NotFound.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxQYWdlc1xOb3RGb3VuZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/Pages/Profile.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxQYWdlc1xQcm9maWxlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxQYWdlc1xSZWdpc3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/Pages/ReporterDashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxQYWdlc1xSZXBvcnRlckRhc2hib2FyZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/Pages/SubmitReport.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxQYWdlc1xTdWJtaXRSZXBvcnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/Pages/VolunteerDashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxQYWdlc1xWb2x1bnRlZXJEYXNoYm9hcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxTaGFyZWRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxTaGFyZWRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-qf51ndouvw
+
+[C:/Users/Thandiwe/Documents/GitHub/disaster-relief-hub/GiftOfGivers.Client/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = R2lmdE9mR2l2ZXJzLkNsaWVudFxMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-ydzectc3ji

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Thandiwe\\Desktop\\Software Development 2025\\Applied Programming\\giver-of-givers\\GiftOfGivers.Shared\\GiftOfGivers.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\Thandiwe\\Documents\\GitHub\\disaster-relief-hub\\GiftOfGivers.Shared\\GiftOfGivers.Shared.csproj",
       "projectName": "GiftOfGivers.Shared",
-      "projectPath": "C:\\Users\\Thandiwe\\Desktop\\Software Development 2025\\Applied Programming\\giver-of-givers\\GiftOfGivers.Shared\\GiftOfGivers.Shared.csproj",
+      "projectPath": "C:\\Users\\Thandiwe\\Documents\\GitHub\\disaster-relief-hub\\GiftOfGivers.Shared\\GiftOfGivers.Shared.csproj",
       "packagesPath": "C:\\Users\\Thandiwe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Thandiwe\\Desktop\\Software Development 2025\\Applied Programming\\giver-of-givers\\GiftOfGivers.Shared\\obj\\",
+      "outputPath": "C:\\Users\\Thandiwe\\Documents\\GitHub\\disaster-relief-hub\\GiftOfGivers.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

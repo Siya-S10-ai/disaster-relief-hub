@@ -5046,11 +5046,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Thandiwe\\Desktop\\Software Development 2025\\Applied Programming\\giver-of-givers\\GiftOfGivers.Server\\GiftOfGivers.Server.csproj",
+      "projectUniqueName": "C:\\Users\\Thandiwe\\Documents\\GitHub\\disaster-relief-hub\\GiftOfGivers.Server\\GiftOfGivers.Server.csproj",
       "projectName": "GiftOfGivers.Server",
-      "projectPath": "C:\\Users\\Thandiwe\\Desktop\\Software Development 2025\\Applied Programming\\giver-of-givers\\GiftOfGivers.Server\\GiftOfGivers.Server.csproj",
+      "projectPath": "C:\\Users\\Thandiwe\\Documents\\GitHub\\disaster-relief-hub\\GiftOfGivers.Server\\GiftOfGivers.Server.csproj",
       "packagesPath": "C:\\Users\\Thandiwe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Thandiwe\\Desktop\\Software Development 2025\\Applied Programming\\giver-of-givers\\GiftOfGivers.Server\\obj\\",
+      "outputPath": "C:\\Users\\Thandiwe\\Documents\\GitHub\\disaster-relief-hub\\GiftOfGivers.Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
