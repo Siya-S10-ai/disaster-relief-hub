@@ -16,4 +16,8 @@
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GiftOfGivers.Server\GiftOfGivers.Server.csproj" />
+  </ItemGroup>
+
 </Project>

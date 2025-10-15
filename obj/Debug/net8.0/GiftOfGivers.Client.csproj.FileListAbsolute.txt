@@ -12,3 +12,10 @@ C:\Users\Thandiwe\Desktop\Software Development 2025\Applied Programming\giver-of
 C:\Users\Thandiwe\Desktop\Software Development 2025\Applied Programming\giver-of-givers\obj\Debug\net8.0\GiftOfGivers.Client.csproj.CoreCompileInputs.cache
 C:\Users\Thandiwe\Desktop\Software Development 2025\Applied Programming\giver-of-givers\obj\Debug\net8.0\GiftOfGivers.Client.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Thandiwe\Desktop\Software Development 2025\Applied Programming\giver-of-givers\obj\Debug\net8.0\GiftOfGivers.Client.sourcelink.json
+C:\Users\Thandiwe\Documents\GitHub\disaster-relief-hub\obj\Debug\net8.0\GiftOfGivers.Client.csproj.AssemblyReference.cache
+C:\Users\Thandiwe\Documents\GitHub\disaster-relief-hub\obj\Debug\net8.0\GiftOfGivers.Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Thandiwe\Documents\GitHub\disaster-relief-hub\obj\Debug\net8.0\GiftOfGivers.Client.AssemblyInfoInputs.cache
+C:\Users\Thandiwe\Documents\GitHub\disaster-relief-hub\obj\Debug\net8.0\GiftOfGivers.Client.AssemblyInfo.cs
+C:\Users\Thandiwe\Documents\GitHub\disaster-relief-hub\obj\Debug\net8.0\GiftOfGivers.Client.csproj.CoreCompileInputs.cache
+C:\Users\Thandiwe\Documents\GitHub\disaster-relief-hub\obj\Debug\net8.0\GiftOfGivers.Client.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Thandiwe\Documents\GitHub\disaster-relief-hub\obj\Debug\net8.0\GiftOfGivers.Client.sourcelink.json
